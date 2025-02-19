@@ -37,6 +37,18 @@ A multiplayer web-based version of the classic Guess Who game built with React, 
    cp frontend/.env.example frontend/.env
    ```
 
+2. The important environment variable in the backend is `CHARACTERS`, which contains the list of characters in JSON format. You can modify it to add or remove characters. Make sure to minify the JSON.
+   1. Example:
+
+      ```json
+      [
+        {"imageUrl":"https://img.pokemondb.net/sprites/home/normal/bulbasaur.png","name":"Bulbasaur"},
+        {"imageUrl":"https://img.pokemondb.net/sprites/home/normal/charmander.png","name":"Charmander"},
+        {"imageUrl":"https://img.pokemondb.net/sprites/home/normal/squirtle.png","name":"Squirtle"},
+        {"imageUrl":"https://img.pokemondb.net/sprites/home/normal/pidgey.png","name":"Pidgey"}
+      ]
+      ```
+
 ## Running the Application
 
 1. Start both frontend and backend:
