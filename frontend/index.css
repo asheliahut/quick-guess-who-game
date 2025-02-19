@@ -1,0 +1,182 @@
+/* Reset and basic styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f7f7f7;
+  color: #333;
+  line-height: 1.6;
+}
+
+#root {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.secret-info {
+  margin: 20px 0;
+  text-align: center;
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+/* Turn indicator styling */
+.turn-indicator {
+  font-size: 1rem;
+  margin-left: 10px;
+}
+
+.turn-indicator.your-turn {
+  color: #27ae60; /* green */
+}
+
+.turn-indicator.opponents-turn {
+  color: #c0392b; /* red */
+}
+
+/* Board formation using CSS Grid */
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 15px;
+  justify-items: center;
+  margin-top: 20px;
+}
+
+/* Character card styling */
+.character-card {
+  background: #fff;
+  width: 140px;
+  padding: 10px;
+  border: 2px solid #ecf0f1;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  cursor: pointer;
+}
+
+.character-card:hover {
+  transform: scale(1.05);
+  border-color: #3498db;
+}
+
+/* Ensure images are the same rectangular size */
+.character-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 8px;
+}
+
+/* Disabled card styling */
+.character-card.disabled {
+  opacity: 0.5;
+  filter: grayscale(100%);
+}
+
+/* Messages container styling */
+.messages {
+  margin-top: 20px;
+  background: #ecf0f1;
+  padding: 15px;
+  border-radius: 8px;
+  max-height: 200px; /* Adjust as needed */
+  overflow-y: auto;
+  
+  /* Firefox scrollbar styling */
+  scrollbar-width: thin;
+  scrollbar-color: #3498db #f7f7f7;
+}
+
+/* WebKit scrollbar styling */
+.messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.messages::-webkit-scrollbar-track {
+  background: #f7f7f7;
+  border-radius: 10px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+  background: #3498db;
+  border-radius: 10px;
+}
+
+.messages::-webkit-scrollbar-thumb:hover {
+  background: #2980b9;
+}
+
+.messages p {
+  margin-bottom: 10px;
+}
+
+/* Winner overlay styling */
+.winner-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.winner-message {
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+  animation: popIn 1s ease-out;
+}
+
+/* Pop-in animation keyframes */
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "guess-who-monorepo",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "start:backend": "bun run --filter ./backend dev",
+    "start:frontend": "bun run --filter ./frontend dev",
+    "start": "concurrently \"bun run start:backend\" \"bun run start:frontend\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
